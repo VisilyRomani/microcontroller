@@ -12,3 +12,8 @@ Notes
 
 #### Update
 - Will need to add button to solve puzzle in-case something goes wrong.
+
+
+## D1-MATRIX
+
+D1-Matrix is code for the led pattern puzzle. There is a preset light pattern that corresponds to spesific buttons with one button that replays the pattern and clears what order the buttons were pressed.

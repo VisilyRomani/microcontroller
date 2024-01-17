@@ -16,8 +16,7 @@ int ledArray[4][2] = {
 
 int button_answer[] = {1, 3, 4, 2};
 int button_list[4];
-const long led_interval = 1000;
-const long button_interval = 500;
+const long button_interval = 300;
 unsigned int list_size = 0;
 unsigned long current_millis;
 unsigned long start_milis;
@@ -36,10 +35,11 @@ void loop()
 {
   current_millis = millis();
   int value = analogRead(A0);
+  Serial.println(current_millis - start_milis >= button_interval);
 
   if (current_millis - start_milis >= button_interval)
   {
-
+    start_milis = current_millis;
     if (value > 800 && value < 1000)
     {
       play_light();
@@ -99,20 +99,21 @@ void check_solution()
 
 void play_light()
 {
+
   for (uint8_t i = 0; i < 4; i++)
   {
     for (uint8_t j = 0; j < 2; j++)
     {
       digitalWrite(ledArray[i][j], HIGH);
     }
-
-    if (current_millis - start_milis >= led_interval)
+    delay(500);
     {
       for (uint8_t j = 0; j < 2; j++)
       {
         digitalWrite(ledArray[i][j], LOW);
       }
     }
+    delay(500);
   }
 }
 

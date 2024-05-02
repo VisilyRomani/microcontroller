@@ -17,3 +17,8 @@ Notes
 ## D1-MATRIX
 
 D1-Matrix is code for the led pattern puzzle. There is a preset light pattern that corresponds to spesific buttons with one button that replays the pattern and clears what order the buttons were pressed.
+
+
+## RELAY-Test
+Test code used to trigger relay. Based on Nano3
+
